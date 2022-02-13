@@ -22,20 +22,21 @@ const ProductViewModal = () => {
     }, [productSlug]);
 
     return (
-        <div className={`product-view__modal ${product === undefined ? '' : 'active'}`}>
-            <div className="product-view__modal__content">
-                <ProductView product={product}/>
-                <div className="product-view__modal__content__close">
-                    <Button
-                        size="sm"    
-                        onClick={() => dispatch(remove())}
-                    >
-                        đóng
-                    </Button>
-                </div>
-            </div>
+      <div
+        className={`product-view__modal ${
+          product === undefined ? "" : "active"
+        }`}
+      >
+        <div className="product-view__modal__content">
+          <ProductView product={product} />
+          <div className="product-view__modal__content__close">
+            <Button size="sm" onClick={() => dispatch(remove())}>
+              close{" "}
+            </Button>
+          </div>
         </div>
-    )
+      </div>
+    );
 }
 
 export default ProductViewModal
